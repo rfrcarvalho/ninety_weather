@@ -1,0 +1,178 @@
+{
+    "media": [
+        {
+            "defName": "IMAGE_NO_WEATHER",
+            "type": "png",
+            "file": "images/error.png"
+        },
+        {
+            "trackingAdjust": -4,
+            "characterRegex": "[0-9:\u00b0-]",
+            "defName": "FUTURA_40",
+            "type": "font",
+            "file": "fonts/futura.ttf"
+        },
+        {
+            "defName": "IMAGE_WIND",
+            "type": "png",
+            "file": "images/wind.png"
+        },
+        {
+            "defName": "IMAGE_SNOW",
+            "type": "png",
+            "file": "images/snow.png"
+        },
+        {
+            "defName": "IMAGE_SLEET",
+            "type": "png",
+            "file": "images/sleet.png"
+        },
+        {
+            "defName": "IMAGE_RAIN",
+            "type": "png",
+            "file": "images/rain.png"
+        },
+        {
+            "defName": "IMAGE_PARTLY_CLOUDY_NIGHT",
+            "type": "png",
+            "file": "images/partly-cloudy-night.png"
+        },
+        {
+            "defName": "IMAGE_PARTLY_CLOUDY_DAY",
+            "type": "png",
+            "file": "images/partly-cloudy-day.png"
+        },
+        {
+            "defName": "IMAGE_FOG",
+            "type": "png",
+            "file": "images/fog.png"
+        },
+        {
+            "defName": "IMAGE_CLOUDY",
+            "type": "png",
+            "file": "images/cloudy.png"
+        },
+        {
+            "defName": "IMAGE_CLEAR_NIGHT",
+            "type": "png",
+            "file": "images/clear-night.png"
+        },
+        {
+            "defName": "IMAGE_CLEAR_DAY",
+            "type": "png",
+            "file": "images/clear-day.png"
+        },
+        {
+            "defName": "IMAGE_NUM_9",
+            "type": "png",
+            "file": "images/num_9.png"
+        },
+        {
+            "defName": "IMAGE_NUM_8",
+            "type": "png",
+            "file": "images/num_8.png"
+        },
+        {
+            "defName": "IMAGE_NUM_7",
+            "type": "png",
+            "file": "images/num_7.png"
+        },
+        {
+            "defName": "IMAGE_NUM_6",
+            "type": "png",
+            "file": "images/num_6.png"
+        },
+        {
+            "defName": "IMAGE_NUM_5",
+            "type": "png",
+            "file": "images/num_5.png"
+        },
+        {
+            "defName": "IMAGE_NUM_4",
+            "type": "png",
+            "file": "images/num_4.png"
+        },
+        {
+            "defName": "IMAGE_NUM_3",
+            "type": "png",
+            "file": "images/num_3.png"
+        },
+        {
+            "defName": "IMAGE_NUM_2",
+            "type": "png",
+            "file": "images/num_2.png"
+        },
+        {
+            "defName": "IMAGE_NUM_1",
+            "type": "png",
+            "file": "images/num_1.png"
+        },
+        {
+            "defName": "IMAGE_NUM_0",
+            "type": "png",
+            "file": "images/num_0.png"
+        },
+        {
+            "defName": "IMAGE_DATENUM_9",
+            "type": "png",
+            "file": "images/datenum_9.png"
+        },
+        {
+            "defName": "IMAGE_DATENUM_8",
+            "type": "png",
+            "file": "images/datenum_8.png"
+        },
+        {
+            "defName": "IMAGE_DATENUM_7",
+            "type": "png",
+            "file": "images/datenum_7.png"
+        },
+        {
+            "defName": "IMAGE_DATENUM_6",
+            "type": "png",
+            "file": "images/datenum_6.png"
+        },
+        {
+            "defName": "IMAGE_DATENUM_5",
+            "type": "png",
+            "file": "images/datenum_5.png"
+        },
+        {
+            "defName": "IMAGE_DATENUM_4",
+            "type": "png",
+            "file": "images/datenum_4.png"
+        },
+        {
+            "defName": "IMAGE_DATENUM_3",
+            "type": "png",
+            "file": "images/datenum_3.png"
+        },
+        {
+            "defName": "IMAGE_DATENUM_2",
+            "type": "png",
+            "file": "images/datenum_2.png"
+        },
+        {
+            "defName": "IMAGE_DATENUM_1",
+            "type": "png",
+            "file": "images/datenum_1.png"
+        },
+        {
+            "defName": "IMAGE_DATENUM_0",
+            "type": "png",
+            "file": "images/datenum_0.png"
+        },
+        {
+            "defName": "IMAGE_BACKGROUND",
+            "type": "png",
+            "file": "images/background.png"
+        },
+        {
+            "defName": "IMAGE_MENU_ICON",
+            "type": "png",
+            "file": "images/menu_icon_91w.png"
+        }
+    ],
+    "friendlyVersion": "VERSION",
+    "versionDefName": "APP_RESOURCES"
+}
