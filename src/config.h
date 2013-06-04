@@ -7,7 +7,7 @@
 #define TIMEZONE 					0
 #define DAY_NAME_LANGUAGE 			DAY_NAME_ENGLISH 		// Valid values: DAY_NAME_ENGLISH, DAY_NAME_GERMAN, DAY_NAME_FRENCH
 #define MOONPHASE_NAME_LANGUAGE 	MOONPHASE_TEXT_ENGLISH 	// Valid values: MOONPHASE_TEXT_ENGLISH, MOONPHASE_TEXT_GERMAN, MOONPHASE_TEXT_FRENCH
-#define day_month_x 				day_month_day_first 	// Valid values: day_month_month_first, day_month_day_first
+#define day_month_x 				day_month_month_first 	// Valid values: day_month_month_first, day_month_day_first
 #define TRANSLATION_CW 				"CW%V" 					// Translation for the calendar week (e.g. "CW%V")
 
 // Any of "us", "ca", "uk" (for idiosyncratic US, Candian and British measurements),
@@ -35,8 +35,9 @@ const int day_month_day_first[] = {
 };
 
 const int day_month_month_first[] = {
-	108,
-	75
+	87,
+	55,
+	115
 };
 
 const char *DAY_NAME_ENGLISH[] = {

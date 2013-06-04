@@ -11,14 +11,15 @@
 #include "link_monitor.h"
 
 #define MY_UUID { 0x91, 0x41, 0xB6, 0x28, 0xBC, 0x89, 0x49, 0x8E, 0xB1, 0x47, 0x04, 0x9F, 0x49, 0xC0, 0x99, 0xAD }
+//#define MY_UUID { 0x91, 0x41, 0xB6, 0x28, 0xBC, 0x89, 0x49, 0x8E, 0xB1, 0x47, 0x29, 0x08, 0xF1, 0x7C, 0x3F, 0xAC}
+
 PBL_APP_INFO(MY_UUID,
 	     "91 Weather", "rfrcarvalho",
-	     0, 1, /* App major/minor version */
+	     1, 3, /* App major/minor version */
 	     RESOURCE_ID_IMAGE_MENU_ICON,
 	     APP_INFO_WATCH_FACE);
 
 Window window;
-TextLayer moonLayer; // The moonphase
 TextLayer cwLayer; // The calendar week
 TextLayer text_sunrise_layer;
 TextLayer text_sunset_layer;
@@ -218,14 +219,16 @@ void success(int32_t cookie, int http_status, DictionaryIterator* received, void
 	
 	Tuple* temperature_tuple = dict_find(received, WEATHER_KEY_TEMPERATURE);
 	if(temperature_tuple) {
-		char *temp_text = itoa(temperature_tuple->value->int16);
+		
+		static char temp_text[5];
+		memcpy(temp_text, itoa(temperature_tuple->value->int16), 4);
 		int degree_pos = strlen(temp_text);
 		memcpy(&temp_text[degree_pos], "°", 3);
 		text_layer_set_text(&text_temperature_layer, temp_text);
 		temperature_set = true;
 	}
 	
-	//link_monitor_handle_success();
+	//link_monitor_handle_success()
 }
 
 void location(float latitude, float longitude, float altitude, float accuracy, void* context) {
@@ -280,7 +283,21 @@ void update_display(PblTm *current_time) {
 	  // Year
 	  set_container_image(&date_digits_images[4], DATENUM_IMAGE_RESOURCE_IDS[((1900+current_time->tm_year)%1000)/10], GPoint(day_month_x[2], 71));
 	  set_container_image(&date_digits_images[5], DATENUM_IMAGE_RESOURCE_IDS[((1900+current_time->tm_year)%1000)%10], GPoint(day_month_x[2] + 13, 71));
-		   
+		
+	  if (!clock_is_24h_style()) {
+		if (current_time->tm_hour >= 12) {
+		  set_container_image(&time_format_image, RESOURCE_ID_IMAGE_PM_MODE, GPoint(118, 140));
+		} else {
+		  layer_remove_from_parent(&time_format_image.layer.layer);
+		  bmp_deinit_container(&time_format_image);
+		}
+
+		if (display_hour/10 == 0) {
+		  layer_remove_from_parent(&time_digits_images[0].layer.layer);
+		  bmp_deinit_container(&time_digits_images[0]);
+		}
+	  }
+	  
 	  // -------------------- Calendar week  
 	  static char cw_text[] = "XX00";
 	  string_format_time(cw_text, sizeof(cw_text), TRANSLATION_CW , current_time);
@@ -332,6 +349,15 @@ void handle_init(AppContextRef ctx) {
 
   bmp_init_container(RESOURCE_ID_IMAGE_BACKGROUND, &background_image);
   layer_add_child(&window.layer, &background_image.layer.layer);
+	
+  if (clock_is_24h_style()) {
+    bmp_init_container(RESOURCE_ID_IMAGE_24_HOUR_MODE, &time_format_image);
+
+    time_format_image.layer.layer.frame.origin.x = 118;
+    time_format_image.layer.layer.frame.origin.y = 140;
+
+    layer_add_child(&window.layer, &time_format_image.layer.layer);
+  }
 
   // Calendar Week Text
   text_layer_init(&cwLayer, GRect(108, 50, 80 /* width */, 30 /* height */));

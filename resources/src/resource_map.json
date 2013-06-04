@@ -1,6 +1,16 @@
 {
     "media": [
         {
+            "defName": "IMAGE_24_HOUR_MODE",
+            "type": "png",
+            "file": "images/time_format_24H.png"
+        },
+        {
+            "defName": "IMAGE_PM_MODE",
+            "type": "png",
+            "file": "images/time_format_PM.png"
+        },
+        {
             "defName": "IMAGE_NO_WEATHER",
             "type": "png",
             "file": "images/error.png"
