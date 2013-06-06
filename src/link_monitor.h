@@ -1,15 +1,12 @@
-#ifndef LINK_MONITOR_H
-#define LINK_MONITOR_H
-
 //Monitors the connection to the phone
 //Can alert the user if it's broken
+#ifndef LINKMON_H
+#define LINKMON_H_H
 
-#include "pebble_os.h"
-#include "http.h"
-#include "util.h"
-
+#include "sync.h"
+	
 void link_monitor_ping();
-void link_monitor_handle_failure(int error);
-void link_monitor_handle_success();
+void link_monitor_handle_failure(int error, struct Data* data);
+void link_monitor_handle_success(struct Data* data);
 
 #endif
